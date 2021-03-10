@@ -13,10 +13,12 @@
 |
 */
 
-$router->get('/', function () use ($router) {
+$router->get('/path', function () use ($router) {
     return $router->app->basePath();
 });
 
-$router->get('user/{id}', fn($id) => \App\Models\User::query()->findOrFail($id));
+$router->get('users/api/{id}', fn($id) => \App\Models\User::query()->findOrFail($id));
 
-$router->get('user/view/{id}', 'UserController@show');
+$router->get('users/{id}', 'UserController@show');
+
+$router->get('users', 'UserController@all');

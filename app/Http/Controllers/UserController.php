@@ -18,6 +18,13 @@ class UserController extends Controller
     {
        $user = $this->userRepository->show($id);
 
-       return view('main', ['user' => $user]);
+       return view('show', ['user' => $user]);
+    }
+
+    public function all()
+    {
+        $users = $this->userRepository->all();
+
+        return view('index', compact('users'));
     }
 }

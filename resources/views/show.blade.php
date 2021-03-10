@@ -8,7 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-<p>name: {{($user->name) }}</p>
-<p>email: {{($user->email) }}</p>
+@if($user != null)
+    <p>{{$user->name}}</p>
+    <p>{{$user->email}}</p>
+    @else
+    This user does not exist.
+    @endif
 </body>
 </html>

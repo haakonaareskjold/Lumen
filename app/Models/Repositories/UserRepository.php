@@ -13,7 +13,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function all()
     {
-        // TODO: Implement all() method.
+        return $this->user->query()->get();
     }
 
     public function create(array $data)
@@ -23,7 +23,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function show($id)
     {
-        return $this->user->query()->findOrFail($id);
+        return $this->user->query()->find($id) ?? null;
     }
 
     public function update(array $data, $id)
