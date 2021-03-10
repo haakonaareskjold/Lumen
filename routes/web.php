@@ -19,4 +19,4 @@ $router->get('/', function () use ($router) {
 
 $router->get('user/{id}', fn($id) => \App\Models\User::query()->findOrFail($id));
 
-$router->get('user/view/{id}', 'ExampleController@show');
+$router->get('user/view/{id}', 'UserController@show');
