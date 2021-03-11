@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-@if($user != null)
+@if($user !== null)
     <p>{{$user->name}}</p>
     <p>{{$user->email}}</p>
     @else

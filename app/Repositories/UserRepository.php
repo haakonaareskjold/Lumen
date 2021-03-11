@@ -14,7 +14,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function index()
     {
-        return $this->model->query()->get();
+        return $this->model::query()->get();
     }
 
     public function create(array $data)
@@ -24,7 +24,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function show($id)
     {
-        return $this->model->query()->find($id) ?? null;
+        return $this->model::query()->find($id);
     }
 
     public function update(array $data, $id)
