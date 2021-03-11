@@ -21,4 +21,4 @@ $router->get('users/api/{id}', fn($id) => \App\Models\User::query()->findOrFail(
 
 $router->get('users/{id}', 'UserController@show');
 
-$router->get('users', 'UserController@all');
+$router->get('users', 'UserController@index');

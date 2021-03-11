@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Repositories\UserRepository;
+use App\Repositories\Interfaces\UserRepositoryInterface;
 
 class UserController extends Controller
 {
     /**
      * Create a new controller instance.
      *
-     * @param UserRepository $userRepository
+     * @param UserRepositoryInterface $userRepository
      */
-    public function __construct(protected UserRepository $userRepository)
+    public function __construct(protected UserRepositoryInterface $userRepository)
     {}
 
     public function show($id)
@@ -21,9 +21,9 @@ class UserController extends Controller
        return view('show', ['user' => $user]);
     }
 
-    public function all()
+    public function index()
     {
-        $users = $this->userRepository->all();
+        $users = $this->userRepository->index();
 
         return view('index', compact('users'));
     }

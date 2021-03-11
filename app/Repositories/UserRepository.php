@@ -1,19 +1,20 @@
 <?php
 
 
-namespace App\Models\Repositories;
+namespace App\Repositories;
 
 
 use App\Models\User;
+use App\Repositories\Interfaces\UserRepositoryInterface;
 
 class UserRepository implements UserRepositoryInterface
 {
-    public function __construct(Protected User $user)
+    public function __construct(Protected User $model)
     {}
 
-    public function all()
+    public function index()
     {
-        return $this->user->query()->get();
+        return $this->model->query()->get();
     }
 
     public function create(array $data)
@@ -23,7 +24,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function show($id)
     {
-        return $this->user->query()->find($id) ?? null;
+        return $this->model->query()->find($id) ?? null;
     }
 
     public function update(array $data, $id)

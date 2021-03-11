@@ -1,16 +1,13 @@
 <?php
 
 
-namespace App\Models\Repositories;
+namespace App\Repositories\Interfaces;
 
 
-/**
- * Interface EloquentRepositoryInterface
- * @package App\Repositories
- */
+
 interface UserRepositoryInterface
 {
-    public function all();
+    public function index();
 
     public function create(array $data);
 
