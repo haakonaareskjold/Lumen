@@ -2,11 +2,17 @@ version: '3.9'
 
 services:
 
-  db:
+  postgres:
     image: postgres:13.2-alpine
-    restart: always
+    restart: unless-stopped
+    volumes:
+    - pgsql_data:/var/lib/postgresql/data
     ports:
     - 5432:5432
     environment:
       - 'POSTGRES_USER=${DB_USERNAME}'
       - 'POSTGRES_PASSWORD=${DB_PASSWORD}'
+
+volumes:
+  pgsql_data:
+    driver: local
