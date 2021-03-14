@@ -13,13 +13,7 @@
 |
 */
 
-<<<<<<< HEAD
 $router->get('/', fn() => view('welcome'));
-=======
-$router->get('/', function () use ($router) {
-    return $router->app->basePath();
-});
->>>>>>> 487dc9be2f17f3514314052b7f556ae241e0c803
 
 $router->get('users/api/{id}', fn($id) => \App\Models\User::query()->findOrFail($id));
 

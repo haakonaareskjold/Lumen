@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 @extends('layouts.main')
 @section('content')
 
     @if($user !== null)
         <div class="">{{$user->name}}</div>
         <div>{{$user->email}}</div>
-=======
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,7 +17,6 @@
 @if($user !== null)
     <p>{{$user->name}}</p>
     <p>{{$user->email}}</p>
->>>>>>> 487dc9be2f17f3514314052b7f556ae241e0c803
     @else
         This user does not exist.
     @endif
