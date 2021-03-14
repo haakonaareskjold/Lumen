@@ -13,9 +13,7 @@
 |
 */
 
-$router->get('/path', function () use ($router) {
-    return $router->app->basePath();
-});
+$router->get('/', fn() => view('welcome'));
 
 $router->get('users/api/{id}', fn($id) => \App\Models\User::query()->findOrFail($id));
 
